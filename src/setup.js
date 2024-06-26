@@ -69,7 +69,7 @@ async function installUnityHub(selfHosted) {
 
         unityHubPath = 'C:/Program Files/Unity Hub/Unity Hub.exe';
         if (!fs.existsSync(unityHubPath)) {
-            const installerPath = await tc.downloadTool('https://public-cdn.cloud.unity3d.com/hub/prod/UnityHubSetup.exe');
+            const installerPath = await tc.downloadTool('https://public-cdn.cloud.unity3d.com/hub/prod/UnityHubSetup.exe', 'C:/Program Files/UnityHubSetup.exe');
             await execute(`"${installerPath}" /s`);
             await execute(`del "${installerPath}"`);
         }
